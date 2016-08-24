@@ -1,0 +1,19 @@
+---
+title: "Getting and Cleaning Data Course Week 4 Project Readme"
+author: "Toby Jones"
+date: "August 22, 2016"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Files
+
+**preperation.R**
+This file will download the zip file and process it into data frames with column titles and activity.
+
+**run_analysis.R**
+This file provides the processing to answer to the questions.
+
