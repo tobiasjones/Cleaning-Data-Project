@@ -6,9 +6,8 @@ ls()
 mergeData <- rbind(test,train)
 
 # 2. Extracts only the measurements on the mean and standard deviation for each measurement.
-subMergeData <- mergeData[,-which(names(mergeData) %in% c("Activity", "subject"))]
-means <- colMeans(subMergeData, na.rm = TRUE)
-std_devs <- apply(subMergeData, 2, sd)
+columns <- grep("-mean\\(\\)|-std\\(\\)", names(mergeData))
+subMergeData <- mergeData[, columns]
 
 # 3. Uses descriptive activity names to name the activities in the data set
 ## Added in preperation.R

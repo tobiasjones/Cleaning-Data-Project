@@ -96,12 +96,11 @@ This section merges the training and test sets.
     mergeData <- rbind(test,train)
 ```
 
-This section extracts the mean and standard deviation.
+This section extracts the mean and standard deviation columns.
 ```{r, eval=FALSE}
     # 2. Extracts only the measurements on the mean and standard deviation for each measurement.
-    subMergeData <- mergeData[,-which(names(mergeData) %in% c("Activity", "subject"))]
-    means <- colMeans(subMergeData, na.rm = TRUE)
-    std_devs <- apply(subMergeData, 2, sd)
+    columns <- grep("-mean\\(\\)|-std\\(\\)", names(mergeData))
+    subMergeData <- mergeData[, columns]
 ```
 
 This section merges the training and test sets.
